@@ -1,0 +1,61 @@
+<div class="mat-elevation-z2" style="width: 50%; padding: 30px; margin: 50px auto; display: flex;justify-content: center;">
+    <form [formGroup]="formTarea">
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput  formControlName="nombre">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Descripcion</mat-label>
+                <input matInput  formControlName="descripcion">
+              </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Fecha Creacion</mat-label>
+                <input matInput [matDatepicker]="fechaCreacion" formControlName="fechaCreacion">
+                <mat-datepicker-toggle matIconSuffix [for]="fechaCreacion"></mat-datepicker-toggle>
+                <mat-datepicker #fechaCreacion></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Fecha Vencimiento</mat-label>
+                <input matInput [matDatepicker]="fechaVencimiento" formControlName="fechaVencimiento">
+                <mat-datepicker-toggle matIconSuffix [for]="fechaVencimiento"></mat-datepicker-toggle>
+                <mat-datepicker #fechaVencimiento></mat-datepicker>
+            </mat-form-field>
+        </div>
+        
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Estado</mat-label>
+                <mat-select formControlName="estado">
+                    <mat-option value="Pendiente">Pendiente</mat-option>
+                    <mat-option value="En Progreso">En Progreso</mat-option>
+                    <mat-option value="Completada">Completada</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Prioridad</mat-label>
+                <mat-select formControlName="prioridad" >
+                    <mat-option value="Baja">Baja</mat-option>
+                    <mat-option value="Media">Media</mat-option>
+                    <mat-option value="Alta">Alta</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+            <button mat-flat-button color="warn" (click)="volver()" style="margin-left: 10px;">Volver</button>
+        </div>
+
+    </form>
+
+</div>
